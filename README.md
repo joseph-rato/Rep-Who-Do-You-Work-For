@@ -3,46 +3,55 @@
 
 ## Background and Overview
 
-Overview for this project is the ability to search an area code and learn who your representatives are. Then to be able to open up the politician and learn information on their past voting history, who they've been accepting donations from and what public opinion of them is based on locational data of twitter.  
-
-I personally think that there are a lot of resources out there that can give us a better understanding of our political system. However this is what I like to call percieved trancparency. It's precieved trancparency because the data is there but in so many disconnected areas that it's hard to have a whole understanding of what the overall situation is. To get an overall understanding of who I'm voting for and how they're doing representing my interests, I need to find data and make it readable. This hasn't been done well and I want to attempt my spin on it. 
-
+Overview for this project is to show how a politician votes according to the twitter oppinion and campaign funding. Maybe also along party lines.
 
 ## Functionality and MVPs
 
 ### Functionality
 
-Search zip code and return a list of politicians in that area code that represent you. 
-
-Clicking on representative returns a few charts that show:
-* Campaign funding from biggest donations down
-* Aggregation of votes along party lines
-* twitter opinion synthesizer based on location and politician's name (maybe political party as well) 
+want to search a politician and return:
+graph that has funding 
+graph against that has twitter opinions 
+graph that shows votes on key subjects
 
 ### MVPs
 
-- [] api pull based on location to get politicians 
-- [] api pull of data based on politician name 
-- [] graphs to show data for campaign fund, aggregation of votes along party lines
-- [] 
+- [] graph that shows past votes on key subjects
+- [] graph that shows past twitter synthesiser on key subjects per location
+- [] pie graph that shows top funders for campaign funding
 
-brieft summary 
-I want to be able to search a zip code then return a list of politicians 
-then i want to select a politician and get informational charts that show:
-* info on how a politician voted, 
-* whos a politician been accepting donations from 
-* and what public opinion is on donation of money
+## Archiitecture and Technologies
 
+### sentiment node.js
+    - https://github.com/thisandagain/sentiment
+    - takes the setiment of a string by measuring the usage of positive or negative words in relation to a subject
+### D3
+    - usage of graphs and animation to properly show results
 
+## Implementation Timeline
 
-The technologies I want to use: 
-* some type of opinion synthesiszer and location selection for twitter opinions
-* d3 for data visualization
+day 1
+    learn how to use d3
+day 2
+    try to implement basic pulls for data
+day 3 
+    represent data in graphs
+day 4 
+    put animations
+day 5
+    stylize
+day 6
+    stylize
 
-The data I want to use
-* open secrets api for campaign funding information
-* govtrack for voting data 
-* twitter scraper or twitter api for locational information and tweets for the synthesizer
+## Wireframe
+![Alt text](wireframemainpage.png?raw=true "Wireframe")
 
-future things have a cool google api that outlines the district of politician is in control of
-maybe have a color graph of the area and how its seperated by type of voter
+## Data Sources 
+
+- govtrack.us api
+    - vote information on politician
+    - politician by zip
+- opensecrets.org api
+    - campaign financing by politician
+- twitter.com api
+    - public opinion data
